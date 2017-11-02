@@ -99,6 +99,9 @@ $("#registerBtn").click(
 					  var errorMessage = error.message;
 					  // ...
 					});
+					
+					window.location = "userInformation.html";
+					
 			document.getElementById('id02').style.display='none';
 			}
 
@@ -118,7 +121,10 @@ $("#resetPwdButton").click(
 
 			auth.sendPasswordResetEmail(emailAddress).then(function() {
 			  // Email sent.
-			  alert("Email sent.!");
+			  alert("Email sent!");
+			  window.location = "index.html";
+			 
+			  
 			}).catch(function(error) {
 			  // An error happened.
 			});

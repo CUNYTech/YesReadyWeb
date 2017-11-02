@@ -93,18 +93,55 @@ $("#registerBtn").click(
 			
 			if(email != "" && password != ""){
 	   
-					firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+					firebase.auth().createUserWithEmailAndPassword(email, password).then(function(user) {
+					//User registers 
+					window.location = "userInformation.html";
+					}).catch(function(error) {
 					  // Handle Errors here.
 					  var errorCode = error.code;
 					  var errorMessage = error.message;
+					  
+					   $("#loginError").show().text(error.message);
+					   document.getElementById('id01').style.display='block';
+					  
 					  // ...
 					});
+					
+					//window.location = "userInformation.html";
+					
 			document.getElementById('id02').style.display='none';
 			}
 
 	   });
 /* End sign up */
 
+
+/* Reset Password */ 
+
+
+$("#resetPwdButton").click(
+	   function()
+	   {
+		
+			var auth = firebase.auth();
+			var emailAddress = $("#resetPwdEmail").val();
+
+			auth.sendPasswordResetEmail(emailAddress).then(function() {
+			  // Email sent.
+			  alert("Email sent!");
+			  window.location = "index.html";
+
+			  
+			}).catch(function(error) {
+			  // An error happened.
+			});
+		
+		
+		
+	   });
+
+
+/* End Reset Password */ 
 
 
 
