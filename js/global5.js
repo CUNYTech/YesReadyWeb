@@ -87,7 +87,6 @@ $(document).ready(function(){
 $("#registerBtn").click(
 	   function()
 	   {
-		   alert('I am not working! ');
 			var email=$("#signUpEmail").val();
 			var password=$("#signUpPassword").val();
 			
@@ -101,7 +100,8 @@ $("#registerBtn").click(
 						// Handle Errors here.
 						var errorCode = error.code;
 						var errorMessage = error.message;
-					});		
+					});	
+			alert('I am not working! ');					
 			}
 			else {
 				 $("#registerError").show().text('Fill all the fields!');
@@ -165,7 +165,8 @@ $("#resetPwdButton").click(
 			  var file = e.target.files[0];
 			  
 			  //Create a storage ref
-			 var storageRef =  firebase.storage().ref('uploads/' + file.name);
+			 var storageRef =  firebase.storage().ref('uploads/' + user.uid + '.jpg');
+			 // var storageRef =  firebase.storage().ref('uploads/' + file.name);
 			  
 			  //Upload file
 			 var task = storageRef.put(file);

@@ -69,15 +69,15 @@ $(document).ready(function(){
 	$("#signOutBtn").click (
 		function() {
 			firebase.auth().signOut().then(function() {
-			  
+				window.location = 'index.html';
 			}).catch(function(error) {
 			  alert(error.message);
 			});	
+			
+			});
+			
 	});
 
-
-
-});
 
 /* End Login */
 
@@ -87,25 +87,42 @@ $(document).ready(function(){
 $("#registerBtn").click(
 	   function()
 	   {
-		//alert("Yes!");
 			var email=$("#signUpEmail").val();
 			var password=$("#signUpPassword").val();
 			
 			if(email != "" && password != ""){
-	   
-					firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-					  // Handle Errors here.
-					  var errorCode = error.code;
-					  var errorMessage = error.message;
-					  // ...
-					});
-					
-					window.location = "userInformation.html";
-					
-			document.getElementById('id02').style.display='none';
+					firebase.auth().createUserWithEmailAndPassword(email, password).then(function(user) {
+						
+						var user = firebase.auth().currentUser;
+						window.location = 'userInformation.html';
+						
+					}, function(error) {
+						// Handle Errors here.
+						var errorCode = error.code;
+						var errorMessage = error.message;
+					});	
+			alert('I am not working! ');					
 			}
+			else {
+				 $("#registerError").show().text('Fill all the fields!');
+				document.getElementById('id02').style.display='block';
+			}
+				document.getElementById('id02').style.display='none';
+				
+				
+				// //Redirecting when signing out
+			// firebase.auth().onAuthStateChanged(function(user) {
+			  // if (user) {
+				// // User is signed in.
+			  // } else {
+			   // window.location = 'userInformation.html';
+			  // }
+			
+			// });
 
-	   });
+});
+				
+	   
 /* End sign up */
 
 
@@ -123,7 +140,7 @@ $("#resetPwdButton").click(
 			  // Email sent.
 			  alert("Email sent!");
 			  window.location = "index.html";
-			 
+
 			  
 			}).catch(function(error) {
 			  // An error happened.
@@ -135,6 +152,55 @@ $("#resetPwdButton").click(
 
 
 /* End Reset Password */ 
+
+/* Image upload */
+		
+		var uploader = document.getElementById('uploader');
+		var userPhoto = document.getElementById('userPhoto');
+		  
+		  
+		  //Listen for file selection
+		  userPhoto.addEventListener('change',function(e) {
+			  //Get file 
+			  var file = e.target.files[0];
+			  
+			  //Create a storage ref
+		//	var storageRef =  firebase.storage().ref('uploads/' + user.uid);
+			 var storageRef =  firebase.storage().ref('uploads/' + file.name);
+			  
+			  //Upload file
+			 var task = storageRef.put(file);
+			  
+			  //Update progress bar
+			  task.on('state_changed',
+			  
+				function progress(snapshot) {
+					var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+					uploader.value = percentage;
+				},
+				
+				
+				function error(err) {
+					
+				},
+				
+				function complete() {
+					
+				}
+			 	  
+			  );
+		  });
+
+
+/* End image upload */
+
+
+/* Image retrieve */
+
+var test = 'firebase_url';
+document.querySelector('img').src = test;
+
+/* End image retrieve */
 
 
 

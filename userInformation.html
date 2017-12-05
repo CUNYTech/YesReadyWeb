@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <link rel="stylesheet" type="text/css" href="css/style1.css" />
-	  <link rel="stylesheet" type="text/css" href="css/style1.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+	  <link rel="stylesheet" type="text/css" href="css/style3.css" />
    </head>
    <body>
       <div class="topnav">
          <a class="active" href="#Home">Home</a>
          <a href="file:///C:/Users/thioy/Desktop/Our%20Website/index1.html">About Us</a>
-         <a href="file:///C:/Users/thioy/Desktop/Website/YesReadyWeb2/index1.html">Contact</a>
+         <a href="file:///C:/Users/thioy/Desktop/Our%20Website/index1.html">Contact</a>
          <a href="#Services">Services</a>
          <div style="padding-left:16px">
             <button id="loginBtnMain" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
-
-
+           
+			 
             <button id="signUpBtn" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign Up</button>
-
+			
 			  <button id="signOutBtn" style="width:auto;">Sign Out</button>
-
-
+           
+			
 			<!-- Sign in form -->
 			<div id="id01" class="modal">
                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
@@ -31,23 +31,23 @@
                      <input type="text" placeholder="Enter Email" name="email" id="loginEmail" required>
                      <label><b>Password</b></label>
                      <input type="password" placeholder="Enter Password" name="psw" id="loginPassword" required>
-
+                    
                      <div class="clearfix">
                         <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-						 <span class="psw"><a href="resetPassword.html">Forget Password?</a></span>
+						 <span class="psw">Forgot <a href="resetPassword.html">password?</a></span>
                         <button class="signupbtn" id="loginBtn">Sign In</button>
-
+						 
                      </div>
                   </div>
 				  </div>
-
-
-
+				  
+				  
+				  
               <!-- </form> -->
             </div>
 			<!--  End Sign in form -->
-
-
+				
+			
 				<!-- Sign up form -->
 			<div id="id02" class="modal">
                <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">×</span>
@@ -60,7 +60,7 @@
                      <input type="text" placeholder="Enter Email" name="email" id="signUpEmail" required>
                      <label><b>Password</b></label>
                      <input type="password" placeholder="Enter Password" name="psw" id="signUpPassword" required>
-
+                    
                      <div class="clearfix">
                         <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
                         <button id="registerBtn">Sign Up</button>
@@ -70,81 +70,85 @@
               <!-- </form> -->
             </div>
 			<!--  End Sign up form -->
-
-
+			
+			
          </div>
       </div>
-
-
-
+	  
+	  
+	  
   <div>
  <p> &nbsp;</p>
   <p> &nbsp;</p>
+  <div>
+					 <div class="container-user-info">
 				  <h1> Enter your Information </h1>
-                  <div class="container-user-info">
-				  <p id="loginError"> </p>
-
-                     <label><b>First Name</b></label>
+				<!--  <p id="loginError"> </p> -->
+				  
+                     <label><b>Name</b></label><br />
                      <input type="text" placeholder="Enter your name" maxlength="13" name="userName" id="userName" required>
-
-					 <label><b>Last Name</b></label>
+					 <br />
+					 <label><b>Lastname</b></label><br />
                      <input type="text" placeholder="Enter your lastname" maxlength="13" name="lastName" id="lastName" required>
-
-					 <label><b>Phone</b></label>
+					 <br />
+					 <label><b>Phone</b></label><br />
                      <input type="text" placeholder="Enter your phone number" maxlength="14" name="userPhone" id="userPhone" required>
-
-					 <label><b>Gender</b></label>
-					 <select name="gender">
+					 <br />
+					 <label><b>Gender</b></label><br />
+					 <select name="gender" id="userGender">
 					  <option value="female">Female</option>
 					  <option value="male">Male</option>
 					  <option value="nonBinary">Non Binary</option>
 					</select>
 					<br />
 					<br />
-
-					<label><b>Profile Picture</b></label>
+					<br />
+					<label><b>Profile picture</b></label><br />
 					<div>
 					<img src="images/rsz_profile.png" />
 					</div>
-					<input type="file" name="userPhoto" id="userPhoto">
-
 					<br />
+					<progress value="0" max="100" id="uploader">0%</progress><br />
+					<input type="file" Value="Upload" name="N_userPhoto" id="userPhoto">
+					
 					<p>&nbsp;</p>
-
-					<input type="button" class="sen" value="Save" name="userInformationSaveBtn" class="savebtn" id="resetPwdButton">
-
+					
+					<button id="userInformationSaveBtn" style="width:auto;">Save</button>
+	
+					
 					<p>&nbsp;</p>
 					<p>&nbsp;</p>
-
+						                  
   </div>
-
-
-
-
-
    </body>
-
-
+   
+   
 	<!-- Firebase initialization -->
-<script src="https://www.gstatic.com/firebasejs/4.5.2/firebase.js"></script>
+
+
+
+<script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
 <script>
   // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyC35-PCg1NpOwDPkrFWTsrP3BR4eD3lvlc",
-    authDomain: "yeshelping-5a601.firebaseapp.com",
-    databaseURL: "https://yeshelping-5a601.firebaseio.com",
-    projectId: "yeshelping-5a601",
-    storageBucket: "yeshelping-5a601.appspot.com",
-    messagingSenderId: "319154754823"
+    apiKey: "AIzaSyCfHexNzqqcTaEOawoBU1x0qRTKspzcAlM",
+    authDomain: "yesreadydb.firebaseapp.com",
+    databaseURL: "https://yesreadydb.firebaseio.com",
+    projectId: "yesreadydb",
+    storageBucket: "yesreadydb.appspot.com",
+    messagingSenderId: "402368660468"
   };
   firebase.initializeApp(config);
+  console.log(firebase);
+  
 </script>
-
+   
     <!-- jQuery link -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+	
 	<!-- External JavaScript link -->
 	 <script type="text/javascript" src="js/global.js"></script>
     <script type="text/javascript" src="js/global2.js"></script>
-
+	<script type="text/javascript" src="js/global3.js"></script>
+	
 </html>
