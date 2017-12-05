@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
-	  <link rel="stylesheet" type="text/css" href="css/style2.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+	  <link rel="stylesheet" type="text/css" href="css/style3.css" />
    </head>
    <body>
-   <!-- Menu -->
       <div class="topnav">
          <a class="active" href="#Home">Home</a>
          <a href="file:///C:/Users/thioy/Desktop/Our%20Website/index1.html">About Us</a>
@@ -22,7 +21,7 @@
 			
 			<!-- Sign in form -->
 			<div id="id01" class="modal">
-               <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+               <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">Ã—</span>
              <!--  <form class="modal-content animate"> -->
 			 <div class="modal-content animate">
                   <div class="container">
@@ -51,12 +50,12 @@
 			
 				<!-- Sign up form -->
 			<div id="id02" class="modal">
-               <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">×</span>
+               <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">Ã—</span>
              <!--  <form class="modal-content animate"> -->
 			 <div class="modal-content animate">
                   <div class="container">
 				  <h1> Sign up </h1>
-				  <p id="registerError"> </p>
+				  <p id="loginError"> </p>
                      <label><b>Email</b></label>
                      <input type="text" placeholder="Enter Email" name="email" id="signUpEmail" required>
                      <label><b>Password</b></label>
@@ -69,25 +68,63 @@
                   </div>
 				  </div>
               <!-- </form> -->
-			  
             </div>
-			<!--  End Sign up form -->	
+			<!--  End Sign up form -->
+			
+			
          </div>
       </div>
-	   <!-- End Menu -->
-	   
-	   
-      <div style="padding-left:16px">
-         <h2> The Healthcare Webpage </h2>
-      </div>
-      <div style="padding-left:1000px">
-	  <p id="pGreeting"></p>
-         <p class="pbody">Our Contents will be here</p>
-      </div>
+	  
+	  
+	  
+  <div>
+ <p> &nbsp;</p>
+  <p> &nbsp;</p>
+  <div>
+					 <div class="container-user-info">
+				  <h1> Enter your Information </h1>
+				<!--  <p id="loginError"> </p> -->
+				  
+                     <label><b>Name</b></label><br />
+                     <input type="text" placeholder="Enter your name" maxlength="13" name="userName" id="userName" required>
+					 <br />
+					 <label><b>Lastname</b></label><br />
+                     <input type="text" placeholder="Enter your lastname" maxlength="13" name="lastName" id="lastName" required>
+					 <br />
+					 <label><b>Phone</b></label><br />
+                     <input type="text" placeholder="Enter your phone number" maxlength="14" name="userPhone" id="userPhone" required>
+					 <br />
+					 <label><b>Gender</b></label><br />
+					 <select name="gender" id="userGender">
+					  <option value="female">Female</option>
+					  <option value="male">Male</option>
+					  <option value="nonBinary">Non Binary</option>
+					</select>
+					<br />
+					<br />
+					<br />
+					<label><b>Profile picture</b></label><br />
+					<div>
+					<img src="images/rsz_profile.png" />
+					</div>
+					<br />
+					<progress value="0" max="100" id="uploader">0%</progress><br />
+					<input type="file" Value="Upload" name="N_userPhoto" id="userPhoto">
+					
+					<p>&nbsp;</p>
+					
+					<button id="userInformationSaveBtn" style="width:auto;">Save</button>
+	
+					
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+						                  
+  </div>
    </body>
    
-  
+   
 	<!-- Firebase initialization -->
+
 
 
 <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
@@ -102,7 +139,6 @@
     messagingSenderId: "402368660468"
   };
   firebase.initializeApp(config);
-  
   console.log(firebase);
   
 </script>
@@ -113,6 +149,6 @@
 	<!-- External JavaScript link -->
 	 <script type="text/javascript" src="js/global.js"></script>
     <script type="text/javascript" src="js/global2.js"></script>
-	 <script type="text/javascript" src="js/global3.js"></script>
+	<script type="text/javascript" src="js/global3.js"></script>
 	
 </html>

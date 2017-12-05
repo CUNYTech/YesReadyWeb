@@ -1,0 +1,10 @@
+/* Save user information */
+
+$("#userInformationSaveBtn").click(
+	   function()
+	   {
+		alert("user info!");
+		
+});
+
+/* End save user information */

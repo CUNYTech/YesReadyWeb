@@ -1,10 +1,15 @@
-body {
-	/* display: flex; */
-	margin:0;
-	align-items: center;
-	/* flex-direction: column; */
-	color: #636363;
-	}
+body {margin:0;}
+
+
+input[type="text"] {
+    width: 70px;
+}
+
+input[type="password"] {
+    width: 70px;
+}
+
+
 
 .topnav {
   overflow: hidden;
@@ -92,8 +97,14 @@ img.avatar {
     border-radius: 50%;
 }
 
+
 .container {
     padding: 16px;
+}
+
+.container-user-info {
+	padding: 15px;
+	width:50%;
 }
 
 span.psw {
@@ -169,8 +180,10 @@ span.psw {
 
 
 .pbody {
+	display:none;
 	color: red;
 }
+
 
 
 /*
@@ -179,14 +192,3 @@ div.ex4
     padding: 2500px;
 }
 */
-
-#uploader {
-	-webkit-appearance: none;
-	appearance: none;
-	width: 50%;
-	margin-bottom: 10px;
-}
-
-
-
-
