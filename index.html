@@ -7,10 +7,11 @@
    <body>
    <!-- Menu -->
       <div class="topnav">
-         <a class="active" href="#Home">Home</a>
-         <a href="file:///C:/Users/thioy/Desktop/Our%20Website/index1.html">About Us</a>
-         <a href="file:///C:/Users/thioy/Desktop/Our%20Website/index1.html">Contact</a>
-         <a href="#Services">Services</a>
+         <a class="active" href="index.html">Home</a>
+         <a href="#">About Us</a>
+         <a href="#">Contact</a>
+         <a href="#"> Request service </a>
+		 <div id="userProfile"><a href="userProfile.html">Profile</a></div>
          <div style="padding-left:16px">
             <button id="loginBtnMain" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
            
@@ -73,17 +74,30 @@
             </div>
 			<!--  End Sign up form -->	
          </div>
+		  
       </div>
 	   <!-- End Menu -->
 	   
+	   <div class="main_container">
 	   
-      <div style="padding-left:16px">
-         <h2> The Healthcare Webpage </h2>
+		  <div style="padding-top:45px">
+			 <h2> The Healthcare Webpage </h2>
+		  </div>
+		  <div style="padding-top:65px">
+		  
+		 <!-- <p id="pGreeting"></p> -->
+		 <!-- User gretting -->
+		 <div class="userGreeting">
+			 <div class="desc" id="userGreet"> Hello, </div> <div class="desc" id="userName"></div>
+			<div class="desc"> </div>
+			<div class="desc" id="userLastname"></div>
+		</div>
+			 <p class="pbody">Our Contents will be here</p>
+			 
+			 <!-- End user gretting -->
       </div>
-      <div style="padding-left:1000px">
-	  <p id="pGreeting"></p>
-         <p class="pbody">Our Contents will be here</p>
-      </div>
+	  
+	  </div>
    </body>
    
   
