@@ -187,6 +187,35 @@ div.ex4
 	margin-bottom: 10px;
 }
 
+.main_container {
+	font-size: 18px;
+	margin: 3% 10% 7%;   /* top right bottom left TROUBLE*/
+	padding: 5% 5% 5%;  
+	background-color: beige;
+	
+}
 
+.title1 {
+	font-size: 22px;
+	font-weight: bold;
+	padding: 2% 0 0 0;
+}
 
+.title2 {
+	font-size: 26px;
+	font-weight: bold;
+	padding: 0 0 0 8%;
+	text-decoration:underline;
+	text-align:center;
+}
+
+.desc {
+	display: inline;
+}
+
+.userGreeting {
+	position:absolute;
+   top:10%;
+   right:11%;
+}
 

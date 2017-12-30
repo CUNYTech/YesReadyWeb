@@ -10,7 +10,7 @@
          <a href="file:///C:/Users/thioy/Desktop/Our%20Website/index1.html">About Us</a>
          <a href="file:///C:/Users/thioy/Desktop/Our%20Website/index1.html">Contact</a>
          <a href="requestService.html"> Request service </a>
-		  <div id="userProfile"><a href="userProfile.html">Profile</a></div>
+		  <div class="userProfile"><a href="userProfile.html">Profile</a></div>
          <div style="padding-left:16px">
             <button id="loginBtnMain" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
            
@@ -78,48 +78,33 @@
 	  
 	  
 	  
-  <div>
+  <div class="main_container">
 
-  <div>
-					 <div class="container-user-info">
-				  <h1> Enter your Information </h1>
-				<!--  <p id="loginError"> </p> -->
-				  
-                     <label><b>Name</b></label><br />
-                     <input type="text" placeholder="Enter your name" maxlength="13" name="userName" id="userName" required>
-					 <br />
-					 <label><b>Lastname</b></label><br />
-                     <input type="text" placeholder="Enter your lastname" maxlength="13" name="lastName" id="lastName" required>
-					 <br />
-					 <label><b>Phone</b></label><br />
-                     <input type="text" placeholder="Enter your phone number" maxlength="14" name="userPhone" id="userPhone" required>
-					 <br />
-					 <label><b>Gender</b></label><br />
-					 <select name="gender" id="userGender">
-					  <option value="female">Female</option>
-					  <option value="male">Male</option>
-					  <option value="nonBinary">Non Binary</option>
-					</select>
-					<br />
-					<br />
-					<br />
-					<label><b>Profile picture</b></label><br />
-					<div>
-					<img src="images/rsz_profile.png" />
-					</div>
-					<br />
-					<progress value="0" max="100" id="uploader">0%</progress><br />
-					<input type="file" Value="Upload" name="N_userPhoto" id="userPhoto">
-					
-					<p>&nbsp;</p>
-					
-					<button id="userInformationSaveBtn" style="width:auto;">Save</button>
-	
-					
-					<p>&nbsp;</p>
-					<p>&nbsp;</p>
-						                  
+  <!-- User information disclosed -->
+  <table width="100%">
+  <tr>
+  <td colspan="2"><div class="title2">PROFILE</div></td>
+  <tr>
+  <tr>
+  <td colspan="2"><!--<img height="125" width="50" />--></td>
+  <tr>
+  <tr>
+	<td><div class="title1">Name</div></td> 
+  </tr>
+  <tr>
+	<td><div class="desc" id="userName"></div>
+	<div class="desc"> </div>
+	<div class="desc" id="userLastname"></div></td>
+  </tr>
+  
+  <tr>
+	<td><div class="title1">Phone</div></td>
+  <tr>
+	<td><div id="userPhone"></div></td>
+  </tr>
+  </table>					                  
   </div>
+  
    </body>
    
    

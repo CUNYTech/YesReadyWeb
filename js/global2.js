@@ -9,11 +9,29 @@ $(document).ready(function(){
 	   var userName = firebase.auth().currentUser;
 	   $(".pbody").show();
 	   $("#signOutBtn").show();
+	   $("#userProfile").show();
 	   $("#loginBtnMain").hide();
 	   $("#signUpBtn").hide();
+	   $("#userGreet").show(); 
+
 	   
+	   var database = firebase.database();
+	   var ref = database.ref('users');
+	   var user = firebase.auth().currentUser;
+		
+		if (user != null) {
+			  uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
+							   // this value to authenticate with your backend server, if
+							   // you have one. Use User.getToken() instead.
+		}
 	   
-	   document.getElementById('pGreeting').innerHTML = "Hello, "+ +userName;
+	 //  document.getElementById('pGreeting').innerHTML = "Hellolo, "+" "+user.uid;
+	    
+
+	  
+	   
+	   // end get user info
+	   
 
 		var dialog = document.querySelector('#loginDialog');
 		  if (! dialog.showModal) {
@@ -25,9 +43,13 @@ $(document).ready(function(){
 
 		//alert("out");
 		
-		$("#signOutBtn").hide();
+	   $("#signOutBtn").hide();
+	   $("#userProfile").hide();
 	   $("#loginBtnMain").show();
 	   $("#signUpBtn").show();
+	   $("#userGreet").hide(); 
+	  
+	   
 		 
 		  var dialog = document.querySelector('#loginDialog');
 		  if (! dialog.showModal) {
@@ -100,25 +122,13 @@ $("#registerBtn").click(
 						// Handle Errors here.
 						var errorCode = error.code;
 						var errorMessage = error.message;
-					});	
-			alert('I am not working! ');					
+					});				
 			}
 			else {
-				 $("#registerError").show().text('Fill all the fields!');
+				$("#registerError").show().text('Fill all the fields!');
 				document.getElementById('id02').style.display='block';
 			}
 				document.getElementById('id02').style.display='none';
-				
-				
-				// //Redirecting when signing out
-			// firebase.auth().onAuthStateChanged(function(user) {
-			  // if (user) {
-				// // User is signed in.
-			  // } else {
-			   // window.location = 'userInformation.html';
-			  // }
-			
-			// });
 
 });
 				
@@ -201,6 +211,8 @@ var test = 'firebase_url';
 document.querySelector('img').src = test;
 
 /* End image retrieve */
+
+
 
 
 
