@@ -6,16 +6,16 @@
    </head>
    <body>
    <!-- Menu -->
-      <div class="topnav">
-         <a class="active" href="index.html">Home</a>
+  <div class="topnav">
+         <img src="images/help_35x35_light.png">
+         <a href="index.html">Home</a>
          <a href="#">About Us</a>
          <a href="#">Contact</a>
-         <a href="requestService.html"> Request service </a>
-		 <div id="userProfile"><a href="userProfile.html">Profile</a></div>
+         <a href="requestService.html" id="reqServ"> Request service </a>
+		  <div id="userProfile"><a href="userProfile.html">Profile</a></div>
          <div style="padding-left:16px">
             <button id="loginBtnMain" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
-           
-			 
+            
             <button id="signUpBtn" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign Up</button>
 			
 			  <button id="signOutBtn" style="width:auto;">Sign Out</button>
@@ -26,7 +26,7 @@
                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
              <!--  <form class="modal-content animate"> -->
 			 <div class="modal-content animate">
-                  <div class="container">
+                  <div class="form_container">
 				  <h1> Sign in </h1>
 				  <p id="loginError"> </p>
                      <label><b>Email</b></label>
@@ -55,13 +55,13 @@
                <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">×</span>
              <!--  <form class="modal-content animate"> -->
 			 <div class="modal-content animate">
-                  <div class="container">
+                   <div class="form_container">
 				  <h1> Sign up </h1>
-				  <p id="registerError"> </p>
-                     <label><b>Email</b></label>
-                     <input type="text" placeholder="Enter Email" name="email" id="signUpEmail" required>
-                     <label><b>Password</b></label>
-                     <input type="password" placeholder="Enter Password" name="psw" id="signUpPassword" required>
+				  <p id="loginError"> </p>
+                     <label><b>Email</b></label> <br/>
+                     <input type="text" placeholder="Enter Email" name="email" id="signUpEmail" required> <br/>
+                     <label><b>Password</b></label> <br/>
+                     <input type="password" placeholder="Enter Password" name="psw" id="signUpPassword" required> <br/>
                     
                      <div class="clearfix">
                         <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
@@ -70,39 +70,69 @@
                   </div>
 				  </div>
               <!-- </form> -->
-			  
             </div>
-			<!--  End Sign up form -->	
+			<!--  End Sign up form -->
+			
+			
          </div>
-		  
       </div>
 	   <!-- End Menu -->
 	 
 		<!-- body -->
 		 <div class="main_container">
-			<div>
+		 <div class="square_container">
+		
 				<table width="100%">
 				<tr>
-				<td><img src="images/groceries.png" /></td> <td></td>
-				<td><img src="images/laundry.png" /></td> <td></td>
+				<td><img src="images/groceries.png" onmouseover="setGroceries()" onclick="document.getElementById('request-form').style.display='block'" style="width:auto;" /> <div class="square_container_text">Do groceries</div></td>
+				<td><img src="images/laundry.png" onmouseover="setLaundry()" onclick="document.getElementById('request-form').style.display='block'" style="width:auto;" /> <div class="square_container_text">Do laundry</div></td>
+			
 				</tr>
 				
 				<tr>
-				<td><img src="images/hospital.png" /></td> <td></td>
-				<td><img src="images/walk_dog.png" /></td> <td></td>
+				<td><img src="images/hospital.png" onmouseover="setHospital()" onclick="document.getElementById('request-form').style.display='block'" style="width:auto;" /><div class="square_container_text">Pick up to the Hospital</div></td> 
+				<td><img src="images/walk_dog.png" onmouseover="setWalkDog()" onclick="document.getElementById('request-form').style.display='block'" style="width:auto;" /><div class="square_container_text">Walk dog</div></td>
 				</tr>
 				
 				<tr>
-				<td colspan="2">Especial Request</td> <td></td>
-				</tr>
-				
-				<tr>
-				<td></td> <td></td>
+				<td colspan="2"><img src="images/special_request.png" onmouseover="setSpecialRequest()" onclick="document.getElementById('request-form').style.display='block'" style="width:auto;" /><div class="square_container_text">Custimized requests</div></td>
 				</tr>
 				</table>
 			</div>
-		 <!-- body -->  
-		</div>		 
+		</div>	
+		
+		<!-- Request form -->
+			<div id="request-form" class="modal">
+               <span onclick="document.getElementById('request-form').style.display='none'" class="close" title="Close Modal">×</span>
+             <!--  <form class="modal-content animate"> -->
+			 <div class="modal-content animate">
+                  <div class="form_container">
+				  <h3> New request </h3>
+				  <p id="groceriesError"> </p>
+				  
+                     <label><b>Title</b></label> <br/>
+                     <input type="text" placeholder="Enter title" maxlength="50" id="requestTitle" required> <br/>
+					 
+					 <label><b>Type</b></label> <br/>
+                     <input type="text" id="requestType" disabled="disabled" required> <br/> 
+					 
+                     <label><b>Description</b></label> <br/>
+                     <textarea rows="10" cols="32" id="requestDescription" maxlength="2000" required></textarea> <br/>
+					 
+					 <label><b>Price</b></label> <br/>
+                     <input type="text" placeholder="Enter price in $ US" id="requestPrice" maxlength="12" required> <br/>
+                    
+                     <div class="clearfix"> 
+                        <button type="button" onclick="document.getElementById('request-form').style.display='none'" class="cancelbtn">Cancel</button> <br/>
+                        <button id="requestBtn">Post</button>
+						 
+                     </div>
+                  </div>
+			</div>
+            </div>
+			<!--  End request form -->
+				
+		 <!-- end body -->  	 
    </body>
    
   

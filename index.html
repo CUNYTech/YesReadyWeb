@@ -2,20 +2,20 @@
 <html>
    <head>
       <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
-	  <link rel="stylesheet" type="text/css" href="css/style2.css" />
+	
    </head>
    <body>
    <!-- Menu -->
-      <div class="topnav">
-         <a class="active" href="index.html">Home</a>
+  <div class="topnav">
+		<img src="images/help_35x35_light.png">
+         <a href="index.html">Home</a>
          <a href="#">About Us</a>
          <a href="#">Contact</a>
-         <a href="#"> Request service </a>
-		 <div id="userProfile"><a href="userProfile.html">Profile</a></div>
+         <a href="requestService.html" id="reqServ"> Request service </a>
+		  <div id="userProfile"><a href="userProfile.html">Profile</a></div>
          <div style="padding-left:16px">
             <button id="loginBtnMain" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
-           
-			 
+            
             <button id="signUpBtn" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign Up</button>
 			
 			  <button id="signOutBtn" style="width:auto;">Sign Out</button>
@@ -26,7 +26,7 @@
                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
              <!--  <form class="modal-content animate"> -->
 			 <div class="modal-content animate">
-                  <div class="container">
+                  <div class="form_container">
 				  <h1> Sign in </h1>
 				  <p id="loginError"> </p>
                      <label><b>Email</b></label>
@@ -37,7 +37,7 @@
                      <div class="clearfix">
                         <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
 						 <span class="psw">Forgot <a href="resetPassword.html">password?</a></span>
-                        <button class="signupbtn" id="loginBtn">Sign In</button>
+                        <button class="requestService" id="loginBtn">Sign In</button>
 						 
                      </div>
                   </div>
@@ -55,13 +55,13 @@
                <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">×</span>
              <!--  <form class="modal-content animate"> -->
 			 <div class="modal-content animate">
-                  <div class="container">
+                   <div class="form_container">
 				  <h1> Sign up </h1>
 				  <p id="registerError"> </p>
-                     <label><b>Email</b></label>
-                     <input type="text" placeholder="Enter Email" name="email" id="signUpEmail" required>
-                     <label><b>Password</b></label>
-                     <input type="password" placeholder="Enter Password" name="psw" id="signUpPassword" required>
+                     <label><b>Email</b></label> <br/>
+                     <input type="text" placeholder="Enter Email" name="email" id="signUpEmail" required> <br/>
+                     <label><b>Password</b></label> <br/>
+                     <input type="password" placeholder="Enter Password" name="psw" id="signUpPassword" required> <br/>
                     
                      <div class="clearfix">
                         <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
@@ -70,34 +70,47 @@
                   </div>
 				  </div>
               <!-- </form> -->
-			  
             </div>
-			<!--  End Sign up form -->	
+			<!--  End Sign up form -->
+			
+			
          </div>
-		  
       </div>
 	   <!-- End Menu -->
 	   
-	   <div class="main_container">
+	
 	   
-		  <div style="padding-top:45px">
-			 <h2> The Healthcare Webpage </h2>
-		  </div>
-		  <div style="padding-top:65px">
-		  
 		 <!-- <p id="pGreeting"></p> -->
 		 <!-- User gretting -->
 		 <div class="userGreeting">
 			 <div class="desc" id="userGreet"> Hello, </div> <div class="desc" id="userName"></div>
 			<div class="desc"> </div>
 			<div class="desc" id="userLastname"></div>
-		</div>
-			 <p class="pbody">Our Contents will be here</p>
-			 
+		</div> 
 			 <!-- End user gretting -->
-      </div>
-	  
-	  </div>
+			 
+			<!-- Main content -->
+			<div class="index_image">
+				<!-- <img src="images/phone_1800.jpeg" /> -->
+				
+				 <div class="index_big_text">
+						<p>Yes Ready! helps people save time, so they can live better</p>
+				</div>
+				
+				<div class="index_smaller_text">
+						<b>We give you a hand getting somebody to do your everyday tasks such as: </b>
+						<ul>
+						<li>Doing the groceries </li>
+						<li>Do the laundry </li>
+						<li>Taking the elderlies to the hospital </li>
+						<li>Walking the dog </li>
+						<li>and more ... </li>
+						</ul>
+				</div>
+				
+			</div>
+			<!-- End main content -->
+
    </body>
    
   

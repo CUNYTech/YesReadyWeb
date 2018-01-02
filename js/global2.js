@@ -13,7 +13,7 @@ $(document).ready(function(){
 	   $("#loginBtnMain").hide();
 	   $("#signUpBtn").hide();
 	   $("#userGreet").show(); 
-
+	   $("#reqServ").show(); 
 	   
 	   var database = firebase.database();
 	   var ref = database.ref('users');
@@ -48,6 +48,7 @@ $(document).ready(function(){
 	   $("#loginBtnMain").show();
 	   $("#signUpBtn").show();
 	   $("#userGreet").hide(); 
+	   $("#reqServ").hide(); 
 	  
 	   
 		 
@@ -63,9 +64,8 @@ $(document).ready(function(){
 
 
 
-	$("#loginBtn").click(
-	   function()
-	   {
+	$("#loginBtn").click(function(){
+		
 			var email=$("#loginEmail").val();
 			var password=$("#loginPassword").val();
 			
@@ -82,8 +82,12 @@ $(document).ready(function(){
 		
 					 
 				});
+				document.getElementById('id01').style.display='none';
+			} else {
+				$("#loginError").show().text('All the fields are required!');
+				document.getElementById('id01').style.display='block';
 			}
-			document.getElementById('id01').style.display='none';
+
 	});
 
 
@@ -122,13 +126,14 @@ $("#registerBtn").click(
 						// Handle Errors here.
 						var errorCode = error.code;
 						var errorMessage = error.message;
-					});				
-			}
-			else {
-				$("#registerError").show().text('Fill all the fields!');
+						$("#registerError").show().text(error.message);
+					});	
+			//	document.getElementById('id02').style.display='none';
+			} else {
+				$("#registerError").show().text('All the fields are required!');
 				document.getElementById('id02').style.display='block';
 			}
-				document.getElementById('id02').style.display='none';
+				
 
 });
 				
@@ -211,8 +216,5 @@ var test = 'firebase_url';
 document.querySelector('img').src = test;
 
 /* End image retrieve */
-
-
-
 
 

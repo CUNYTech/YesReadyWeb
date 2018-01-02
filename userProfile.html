@@ -5,16 +5,17 @@
 	  <link rel="stylesheet" type="text/css" href="css/style3.css" />
    </head>
    <body>
-      <div class="topnav">
-         <a class="active" href="index.html">Home</a>
-         <a href="file:///C:/Users/thioy/Desktop/Our%20Website/index1.html">About Us</a>
-         <a href="file:///C:/Users/thioy/Desktop/Our%20Website/index1.html">Contact</a>
-         <a href="requestService.html"> Request service </a>
-		  <div class="userProfile"><a href="userProfile.html">Profile</a></div>
+       <!-- Menu -->
+  <div class="topnav">
+         <img src="images/help_35x35_light.png">
+         <a href="index.html">Home</a>
+         <a href="#">About Us</a>
+         <a href="#">Contact</a>
+         <a href="requestService.html" id="reqServ"> Request service </a>
+		  <div id="userProfile"><a href="userProfile.html">Profile</a></div>
          <div style="padding-left:16px">
             <button id="loginBtnMain" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
-           
-			 
+            
             <button id="signUpBtn" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign Up</button>
 			
 			  <button id="signOutBtn" style="width:auto;">Sign Out</button>
@@ -25,7 +26,7 @@
                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
              <!--  <form class="modal-content animate"> -->
 			 <div class="modal-content animate">
-                  <div class="container">
+                  <div class="form_container">
 				  <h1> Sign in </h1>
 				  <p id="loginError"> </p>
                      <label><b>Email</b></label>
@@ -41,9 +42,7 @@
                      </div>
                   </div>
 				  </div>
-				  
-				  
-				  
+  
               <!-- </form> -->
             </div>
 			<!--  End Sign in form -->
@@ -54,13 +53,13 @@
                <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">×</span>
              <!--  <form class="modal-content animate"> -->
 			 <div class="modal-content animate">
-                  <div class="container">
+                   <div class="form_container">
 				  <h1> Sign up </h1>
 				  <p id="loginError"> </p>
-                     <label><b>Email</b></label>
-                     <input type="text" placeholder="Enter Email" name="email" id="signUpEmail" required>
-                     <label><b>Password</b></label>
-                     <input type="password" placeholder="Enter Password" name="psw" id="signUpPassword" required>
+                     <label><b>Email</b></label> <br/>
+                     <input type="text" placeholder="Enter Email" name="email" id="signUpEmail" required> <br/>
+                     <label><b>Password</b></label> <br/>
+                     <input type="password" placeholder="Enter Password" name="psw" id="signUpPassword" required> <br/>
                     
                      <div class="clearfix">
                         <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
@@ -72,9 +71,9 @@
             </div>
 			<!--  End Sign up form -->
 			
-			
          </div>
       </div>
+	   <!-- End Menu -->
 	  
 	  
 	  
@@ -99,15 +98,31 @@
   
   <tr>
 	<td><div class="title1">Phone</div></td>
+	</tr>
   <tr>
 	<td><div id="userPhone"></div></td>
   </tr>
+  
+    <tr>
+	<td><div class="title1">Address</div></td>
+	</tr>
+  <tr>
+	<td><div class="desc" id="streetAddress"></div>
+	<div class="desc"> </div>
+	<div class="desc" id="cityAddress"></div>
+	<div class="desc"> </div>
+	<div class="desc" id="stateAdress"></div>
+	<div class="desc"> </div>
+	<div class="desc" id="cityAddress"></div>
+	<div class="desc"> </div>
+	<div class="desc" id="zipCode"></div>
+	</td> 
+  </tr>
+  
   </table>					                  
   </div>
   
-   </body>
-   
-   
+   </body> 
 	<!-- Firebase initialization -->
 
 
